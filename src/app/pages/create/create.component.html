@@ -1,0 +1,43 @@
+<div class="bg-[#121316] h-[600px] w-[550px] text-white">
+    <div class="p-2">
+        
+        <div class=" w-full flex items-start m-2 p-2 border-b-2 border-c1/90 text-4xl justify-between text-white">
+            <div class="flex items-center ml-32 text-5xl text-c1/90 justify-center">
+                Add Note
+            </div>
+            <lord-icon
+                    (click)="closenote()"
+                    class="cursor-pointer"
+                    
+                    src="https://cdn.lordicon.com/nqtddedc.json"
+                    trigger="loop"
+                    delay="2000"
+                    state="hover-cross-3"
+                    colors="primary:#ffffff"
+                    style="width:30px;height:30px">
+                </lord-icon>
+        </div>
+        
+        <form class="" [formGroup]="addnote"  novalidate >
+            <div class=" mb-3">
+                <label class="text-3xl" for="title">Title <span>*</span></label>
+                <input class="bg-transparent w-full" name="title" id="title" type="text" placeholder="Title" formControlName="title">
+                @if (addnote.get('title')?.hasError('required') &&  (addnote.get('title')?.touched)) {
+                    <span class="form-error">Title is required</span>
+                }
+            </div>
+            <div class=" mb-3">
+                <label for="body">Body <span>*</span></label>
+                <textarea class="bg-transparent outline-none" name="body" id="body" cols="70" rows="11" formControlName="body"></textarea>
+                @if (addnote.get('body')?.hasError('required') && (addnote.get('body')?.touched) ) {
+                    <span class="form-error">Body is required</span>
+                }
+            </div>
+           </form>
+            <div class=" w-full flex items-center justify-end">
+                <div (click)="submitNote()" class="flex cursor-pointer justify-center bg-c1/90 rounded-lg text-[#121316] m-2 p-2 text-lg">
+                    Add Note
+                </div>
+            </div>
+       </div>
+</div>

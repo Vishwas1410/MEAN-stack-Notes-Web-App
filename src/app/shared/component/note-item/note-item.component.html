@@ -1,0 +1,13 @@
+<div [routerLink]="['/notes',data._id]" class="  text-white shadow-md overflow-y-hidden  cursor-pointer shadow-[#161B22]/25 border border-[#161B22] bg-[#161B22]/90 rounded-md w-56  h-52">
+   
+    <div class="flex flex-col  justify-center">
+        <div class=" text-2xl font-normal p-2 rounded-b-md border-b-2 border-black overflow-x-hidden font-sans bg-c1/80 text-black ">
+            {{data.title}}
+        </div>
+        <div class=" text-md  p-2 rounded-b-lg">
+            <div class="">
+                {{data.body}}
+            </div>
+        </div>
+    </div>
+</div>

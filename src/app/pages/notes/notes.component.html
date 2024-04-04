@@ -1,0 +1,42 @@
+<div class="grid  grid-cols-6">
+    <div class="col-span-1 mx-1">
+        <app-side-bar></app-side-bar>
+    </div>
+    <div class="col-span-1 rounded-md    my-2 ml-2 rounded-r-none border border-[#161B22]  gap-2 p-2 ">
+        <div class="text-c1/90 font-thin border-b-2 border-gray-600 rounded-b-md text-7xl p-2">
+            My Notes
+            
+        </div>
+        <div (click)="addnote()" class="flex cursor-pointer justify-center bg-c1/90 rounded-lg text-[#121316] m-2 text-lg">
+            Add Note
+        </div>
+        
+        <div class="overflow-y-scroll h-[30rem] ">
+            <ul>
+                
+                @for (item of notes$ | async;  track $index) {<li >
+
+                    <app-note-bar [data]="item" ></app-note-bar>
+                </li>}
+                    
+            </ul>
+        </div>
+    </div>
+    <div *ngIf="note" class="col-span-4  my-2 mr-2 p-3 gap-3   rounded-l-none text-white rounded-md  border border-[#161B22] border-l-0">
+        <div  class="text-6xl text-gray-300/95 mb-8 flex items-center justify-center w-full font-display">
+           {{note.title}}
+            
+           
+
+        </div>
+        <div class="flex items-start justify-start p-2 text-3xl overflow-y-scroll h-4/5  font-display">
+            {{note.body}}
+        </div>
+        <div class="flex items-end justify-end w-full">
+            <div (click)="deletenote(note._id)" class="flex items-center justify-center h-12 w-12 bg-[#1f1f1f] cursor-pointer rounded-full text-[#161B22] text-lg shadow-sm shadow-black font-black p-2">
+                <i class="text-white fa-regular fa-trash-can"></i>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.btn{
+    @apply rounded-lg px-5 py-2.5 font-medium;
+    &.btn-blue{
+        @apply text-white bg-blue-600 shadow-sm shadow-gray-800 hover:bg-blue-800;
+    }
+    
+    
+    &.btn-red{
+        @apply text-white bg-red-600 hover:bg-red-800;
+    }
+    &.btn-green{
+        @apply text-white bg-green-600 shadow-sm shadow-gray-800 hover:bg-green-800;
+    }
+    &.btn-rounded{
+        @apply rounded-full;
+    }
+    &.btn-sm{
+        @apply text-sm px-3 py-1.5 font-medium;
+    }
+    &.btn-gr{
+        @apply text-black bg-gradient-to-tr from-g3 to-g4 hover:bg-gradient-to-bl from-g4 to-g3
+    }
+}
+.btn-dark{
+    @apply rounded-md px-3 py-1.5 text-white bg-gray-600 hover:bg-gray-800;}

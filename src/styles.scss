@@ -1,0 +1,400 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+@import "./assets/scss/form";
+@import "./assets/scss/button";
+
+
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-repeat: no-repeat;
+    background-position: center;
+  background-size:cover;
+  
+  
+  background-image: url('./assets/bgflowwhite.png');
+    @apply  bg-black
+    
+    
+}
+.blackbg{
+  background-image: url('./assets/bgBlack.png');
+
+}
+.car{
+  background-image: url('./assets/bg4.png');
+  background-size: cover;
+  background-size: 100%;
+ 
+}
+.scrollable-div {
+  height: 355px; /* set a fixed height for the div */
+  overflow-y: hidden;
+  overflow-y: scroll; /* enable vertical scrollbar */
+  
+}
+.scrollable-div3 {
+   /* set a fixed height for the div */
+  overflow-y: hidden;
+  overflow-y: scroll; /* enable vertical scrollbar */
+  
+}
+.scrollable-div4 {
+   /* set a fixed height for the div */
+  overflow-x: hidden;
+  overflow-x: scroll; /* enable vertical scrollbar */
+  
+}
+.scrollable-div2 {
+  height: 370px; /* set a fixed height for the div */
+  overflow-y: hidden;
+  overflow-y: scroll; /* enable vertical scrollbar */
+}
+/* width */
+::-webkit-scrollbar {
+  
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(176, 176, 176, 0.312);
+  
+  border-radius: 5px;
+}
+
+@layer base {
+    .font-outline-2 {
+      -webkit-text-stroke: 2px black;
+      
+    }
+    .font-outline-4 {
+      -webkit-text-stroke: 4px #141414;
+    }
+  }
+
+
+  .book {
+    position: relative;
+    border-radius: 10px;
+    width: 220px;
+    height: 300px;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000;
+  }
+  
+  .cover {
+    top: 0;
+    position: absolute;
+    background-color: #1f1f1f ;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  
+  .book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+  }
+  
+  p {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+
+
+  .clock {
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    border-radius: 50%;
+    border: 20px solid transparent;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px black, inset 2px 2px 2px black,
+      -1px -1px 5px rgba(0, 0, 0, 0.473), inset -1px -1px 5px rgba(0, 0, 0, 0.473);
+  }
+  
+  .numbers {
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 20px;
+    background-color: transparent;
+  }
+  
+  .number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 0.1rem;
+    height: 0.9rem;
+    background-color: rgb(106, 108, 117);
+  }
+  .number:nth-child(1) {
+    transform: translate(-50%, -50%) rotateZ(calc(30deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(2) {
+    transform: translate(-50%, -50%) rotateZ(calc(60deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(3) {
+    transform: translate(-50%, -50%) rotateZ(calc(90deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(4) {
+    transform: translate(-50%, -50%) rotateZ(calc(120deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(5) {
+    transform: translate(-50%, -50%) rotateZ(calc(150deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(6) {
+    transform: translate(-50%, -50%) rotateZ(calc(180deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(7) {
+    transform: translate(-50%, -50%) rotateZ(calc(210deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(8) {
+    transform: translate(-50%, -50%) rotateZ(calc(240deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(9) {
+    transform: translate(-50%, -50%) rotateZ(calc(270deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(10) {
+    transform: translate(-50%, -50%) rotateZ(calc(300deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(11) {
+    transform: translate(-50%, -50%) rotateZ(calc(330deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(12) {
+    transform: translate(-50%, -50%) rotateZ(calc(0deg)) translateY(-80px);
+  }
+  
+  .number:nth-child(3),
+  .number:nth-child(6),
+  .number:nth-child(9),
+  .number:nth-child(12) {
+    width: 0.3rem;
+    height: 1.5rem;
+  }
+  
+  .needles {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .h,
+  .m,
+  .s,
+  .center {
+    display: inline-block;
+    width: 7px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50% 50% 0 0;
+  }
+  
+  .s {
+    transform: translate(-50%, -80%);
+  }
+  
+  .h {
+    background-color: black;
+    transform-origin: 50% 100%;
+    animation: rotate 43200s 60s infinite linear;
+    transform: translate(-50%, -100%) rotateZ(5deg);
+    height: 2.5rem;
+    z-index: 1;
+  }
+  
+  .m {
+    background-color: rgb(176, 176, 185);
+    z-index: 2;
+    height: 4rem;
+    width: 5px;
+    transform-origin: 50% 100%;
+    transform: translate(-50%, -100%) rotateZ(60deg);
+    animation: rotate 3600s 60s infinite steps(60, end);
+  }
+  
+  .s {
+    background-color: rgb(240, 31, 31);
+    z-index: 3;
+    height: 5rem;
+    width: 3px;
+    transform-origin: 50% 80%;
+    animation: rotate 60s infinite steps(60, end);
+  }
+  
+  .center {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: solid 4px red;
+    z-index: 4;
+    border-radius: 50%;
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: translate(-50%, -80%) rotateZ(360deg);
+    }
+  }
+  .calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @apply text-white
+  }
+  
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 100px;
+  }
+  .calendar-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @apply text-white
+  }
+  
+  .days-grid2 {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    column-gap: 27px;
+  }
+  /* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+  
+.con {
+  cursor: pointer;
+}
+
+.con input {
+  display: none;
+}
+
+.con svg {
+  overflow: visible;
+}
+
+.path {
+  fill: none;
+  stroke: white;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+  stroke-dasharray: 241 9999999;
+  stroke-dashoffset: 0;
+}
+
+.con input:checked ~ svg .path {
+  stroke-dasharray: 70.5096664428711 9999999;
+  stroke-dashoffset: -262.2723388671875;
+}

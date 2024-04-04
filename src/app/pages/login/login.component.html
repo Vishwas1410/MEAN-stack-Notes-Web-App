@@ -1,0 +1,64 @@
+<div class="grid grid-cols-5 p-2 h-full">
+    <div  class="col-span-4  h-full flex items-center justify-center ">
+        <div style="background-repeat: no-repeat;background-position: center;" class=" flex items-center justify-center w-full gap-4 h-full p-4 " >
+            <div class="">
+            <div class="  text-white text-9xl mx-8 flex items-center justify-center font-extrabold">
+                TaskFlow.
+                
+            </div>
+            <div class=" text-6xl font-medium flex items-start mb-11 justify-center text-white">
+                Notes, tasks, calendar - all in one flow.
+            </div>
+
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-span-1 h-[97vh] w-full rounded-md bg-clip-padding backdrop-filter  border border-[#161B22]
+    ">
+        <div class="flex items-center justify-center">
+            <lord-icon
+    src="https://cdn.lordicon.com/zfzufhzk.json"
+    trigger="loop"
+    delay="2000"
+    stroke="light"
+    state="hover-line"
+    colors="primary:#121131,secondary:#3080e8,tertiary:#ebe6ef,quaternary:#f9c9c0,quinary:#b4b4b4"
+    style="width:250px;height:250px">
+</lord-icon>
+        </div>
+        <div class=" text-gray-100  text-2xl flex items-center justify-center">
+            Welcome Back!!
+        </div>
+        <div class="text-gray-100 p-4 rounded-xl">
+           <div>
+            <form class="" [formGroup]="loginform" (submit)="onSubmit()" novalidate >
+                <div class="form-group mb-3">
+                    <label for="email">Email <span>*</span></label>
+                    <input class="form-control" name="email" id="email" type="email" placeholder="Email" formControlName="email">
+                    @if (loginform.get('email')?.hasError('required') &&  (loginform.get('email')?.touched)) {
+                        <span class="form-error">Email is required</span>
+                    }
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password">Password <span>*</span></label>
+                    <input class="form-control mb-0" name="password" id="password" type="password" placeholder="Password" formControlName="password">
+                    @if (loginform.get('password')?.hasError('required') && (loginform.get('password')?.touched) ) {
+                        <span class="form-error">Password is required</span>
+                    }
+                </div>
+                <div class="inline-flex items-end justify-end w-full text-sm cursor-pointer hover:text-blue-800  text-gray-100 ">
+                    Forgot Password?
+                </div>
+                <div class=" my-4 flex items-center justify-center">
+                    <button class="btn btn-blue">Login</button>
+                </div>
+               </form>
+           </div>
+           <div id="google-btn" class="flex items-center border-t-2 border-gray-100 p-2 justify-center">
+
+           </div>
+        </div>
+    
+    </div>
+</div>

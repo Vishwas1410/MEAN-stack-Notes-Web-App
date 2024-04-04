@@ -1,0 +1,108 @@
+<div class="grid grid-cols-6  ">
+    <div class="col-span-1 px-1">
+        <app-side-bar></app-side-bar>
+    </div>
+    <div class="h-[710px]   my-2  pb-1 pr-1 col-span-5 scrollable-div3  rounded-sm grid grid-rows-4 ">
+        <div style="background-repeat: no-repeat; background-size: cover; background-size: 100%;" class="bg-bgleaf bg-blend-multiply  row-span-1 flex items-center justify-between p-2 h-full w-full rounded-sm text-gray-300/95  text-7xl">
+            
+            <div class="flex flex-col cursor-default">
+                <div  class=" font-sans text-gray-100">
+                  
+                </div>
+                <div class=" text-gray-100 font-bold">
+                    Dashboard
+                </div>
+            </div>
+            
+            
+            
+        </div>
+        
+        <div style="background-position: center; background-size: contain; background-repeat: no-repeat;" class="row-span-3 h-fit  p-3  mb-2 w-full 
+         text-gray-300">
+            <div class="grid h-full gap-3 grid-cols-4">
+                <div class="col-span-3  ">
+                    <div class="text-white w-full flex items-center  text-4xl font-light m-2">
+                        Pending Tasks
+                        
+
+                    </div>
+                    @if (!tasks$) {
+                        <div>
+                            No Pending Tasks Remaining
+                        </div>
+                    }
+                    <div class="  p-2 scrollable-div3 h-56">
+                        @for (item of tasks$ | async; track $index) {<app-task-bar [data]="item"></app-task-bar>}
+                    </div>
+                </div>
+                <div class="col-span-1 p-2  ">
+                    <div class="text-white w-full  flex items-center justify-center text-4xl font-light">
+                        Progress
+                    </div>
+                    <div class="text-lg p-2 m-2">
+                    
+                        <div>
+                            <canvas baseChart [data]="barChartData"  [type]="'doughnut'"> </canvas>
+                        </div>
+                        
+
+                    </div>
+                    
+                    
+                </div>
+                
+                
+            </div>
+            <div class="font-light text-4xl">
+                Pinned Notes
+                
+                
+            </div>
+            <div class="grid gap-1.5 grid-cols-4">
+                <div class="w-full col-span-3 flex items-center overflow-x-scroll gap-1.5 h-64  p-2 mb-3">
+                    @for (pins of pins$ | async; track $index) {<app-note-item [data]="pins"></app-note-item>}
+                
+                </div>
+                <div class="col-span-1 h-64  rounded-lg ">
+                    
+                    <div class="h-full bg-[#161B22]/90 p-1 rounded-lg  shadow-black shadow-md font-mono">
+                        <div class="bg-b3 text-black rounded-t-lg  flex justify-center text-2xl ">
+                            Calender
+                        </div>
+                        <div class="p-2 text-[#1cb982]">
+                            <div class="calendar-container2">
+                                <div class="text-xl mb-1">{{ currentYear }}/{{ currentMonth + 1 }}</div>
+                                <div class="days-grid2">
+                                <div *ngFor="let day of daysInMonth">{{ day }}</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between gap-3">
+
+                                <button  (click)="goToPreviousMonth()">Previous Month</button>
+                                <button   (click)="goToNextMonth()">Next Month</button>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="font-light text-4xl">
+                Recents
+            </div>
+            <div class="grid gap-2 grid-cols-4">
+                <div class="w-full col-span-4 flex items-center overflow-x-scroll gap-2 h-64 rounded-lg p-2 mb-3">
+                
+                @for (item of notes$ | async; track $index) {<app-note-item [data]="item"></app-note-item>}
+                
+                </div>
+                
+            </div>
+            
+           
+            
+            
+        </div>
+    </div> 
+
+</div>

@@ -1,0 +1,47 @@
+<div *ngIf="user" class="flex flex-col items-center h-screen w-full justify-center">
+    <div class=" w-full flex items-start m-2 p-2 text-4xl  justify-end text-white">
+        <lord-icon
+                (click)="reroute()"
+                class="cursor-pointer"
+                
+                src="https://cdn.lordicon.com/nqtddedc.json"
+                trigger="loop"
+                delay="2000"
+                state="hover-cross-3"
+                colors="primary:#ffffff"
+                style="width:40px;height:40px">
+            </lord-icon>
+    </div>
+    <div class="w-52">
+        <div class="h-40 w-40 rounded-full flex items-center justify-center ">
+       <img class="h-full w-full rounded-full" [src]="user.profilepic">
+        </div>
+        <div class="w-full flex justify-end  rounded-full p-2 ">
+            <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
+        </div>
+    </div>
+    <div>
+        <div class="text-9xl text-white font-thin">
+            {{user.name}}
+        </div>
+        <div class="text-white">
+            <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
+        </div>
+    </div>
+    
+    <div class="mb-36" >
+        <div class="text-4xl text-white font-sans">
+            {{user.email}}
+        </div>
+    </div>
+    <div class="text-white flex justify-between w-72 p-4">
+        <div (click)="logout()" class="hover:text-blue-600 cursor-pointer">
+            logout
+        </div>
+        <div class="hover:text-red-600 cursor-pointer">
+            delete account
+        </div>
+    </div>
+    
+    
+</div>

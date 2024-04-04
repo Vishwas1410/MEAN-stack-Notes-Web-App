@@ -1,0 +1,57 @@
+<div class="flex bg-transparent flex-col border border-[#161B22] rounded-md  my-2 items-center justify-center">
+    <div class="rounded-full flex items-center justify-center text-6xl font-semibold h-40 w-40   shadow-sm my-5">
+        <img *ngIf="user" class=" bg-transparent rounded-full h-[157px] w-[157px]"  [src]='user.profilepic' >
+       
+    </div>
+    <div *ngIf="user"  class="text-white overflow-hidden w-full h-10 flex justify-center  text-2xl">
+        {{user.name}}
+        
+    </div>
+    <div class="flex justify-center gap-2 w-full h-8 m-2">
+        <div (click)="addnote()" class="bg-c1/80 text-sm  flex items-center gap-0.5 p-0.5 justify-center rounded-md font-medium cursor-pointer w-fit ml-2">
+            <i class="fa-solid fa-file-circle-plus"></i>
+            New Note
+        </div>
+        <div class=" bg-purple-900 gap-0.5 p-0.5  flex items-center justify-center rounded-md font-medium cursor-pointer w-fit ml-2">
+            <i class="fa-regular fa-rectangle-list"></i>
+            New Task
+        </div>
+        <div routerLink="/profile" class=" text-gray-300 text-xl  flex items-center justify-center cursor-pointer  w-fit mx-1">
+            <i class="fa-solid fa-user-pen" style="color: #ffffff;"></i>
+        </div>
+    </div>
+    <div class="rounded-b-lg mb-3">
+        <form action="" class="flex items-center">
+            <i class="ri-search-2-line text-2xl border-gray-500 mt-3 border-b-2 text-gray-300/55 overflow-hidden"></i>
+
+            <input class="search border-b-2 border-gray-500 bg-transparent outline-none" placeholder="search" type="text">
+        </form>
+    </div>
+    <div class=" shadow-black   text-gray-300 flex flex-col items-stretch px-2 w-full">
+        <div class="mb-[140px]">
+            <div routerLink="/dashboard" class=" hover:bg-[#1F1F1F] h-10 flex  items-center mt-1 cursor-pointer gap-1 px-2 rounded-md">
+                <i class="text-cyan-600 fa-solid fa-house"></i>
+                Dashboard
+            </div>
+            <div routerLink="/notes" class="hover:bg-[#1F1F1F]  h-10 flex items-center gap-1 mt-0.5 cursor-pointer px-2 rounded-md">
+                <i class="text-orange-400 fa-solid fa-marker"></i>
+                Notes
+            </div >
+            <div routerLink="/tasks" class="hover:bg-[#1F1F1F] h-10 flex items-center gap-1 mt-0.5 cursor-pointer px-2 rounded-md">
+                <i class="text-purple-800 fa-solid fa-list-check"></i>
+                Task
+            </div>
+            
+            <div routerLink="/trash" class="hover:bg-[#1F1F1F] h-10 flex items-center mt-0.5  gap-1 cursor-pointer px-2 rounded-md">
+                <i class="text-j2/70 fa-regular fa-trash-can"></i>
+                Trash
+            </div>
+        </div>
+        <div class="p-2.5 flex items-center justify-center">
+            <div class="hover:text-blue-800 cursor-pointer mt-2.5"  (click)="logout()" >
+                logout
+            </div>
+        </div>
+    </div>
+    
+</div>

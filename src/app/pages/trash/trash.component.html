@@ -1,0 +1,49 @@
+<div class="grid grid-cols-6  ">
+    <div class="col-span-1 px-1">
+        <app-side-bar></app-side-bar>
+    </div>
+    <div class="h-[723px]  scrollable-div3  py-2 pr-1 col-span-5   rounded-sm grid grid-rows-4 ">
+        <div style="background-repeat: no-repeat; background-size: cover; background-size: 100%;" class="bg-bgleaf row-span-1 flex items-center justify-start p-2 h-full w-full rounded-sm  text-7xl">
+            <div class="flex flex-col cursor-default">
+                <div class="text-white font-light">
+                    Recently 
+                </div>
+                <div class=" text-white font-black">
+                    Deleted
+                </div>
+            </div>
+            
+            
+            
+            
+        </div>
+        <div class="row-span-3  rounded-md px-2   text-white">
+            
+            <div class="h-5/6 scrollable-div3">
+                <div class="font-light text-4xl">
+                    Deleted Notes
+                </div>
+                <div class="grid gap-2 grid-cols-4">
+                    <div class="w-full col-span-4 flex items-center overflow-x-scroll gap-2 h-64 rounded-lg p-2 mb-3">
+                    
+                    @for (item of deletedNote$ | async; track $index) {<app-note-item [data]="item"></app-note-item>}
+                    
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div class="flex items-end justify-end w-full">
+                <div class="flex items-center justify-center h-12 w-12 bg-[#1f1f1f] cursor-pointer rounded-full text-[#161B22] text-lg shadow-sm shadow-black font-black p-2">
+                    <i class="text-white fa-regular fa-trash-can"></i>
+                </div>
+            </div>
+        </div>
+       
+    </div> 
+
+</div>
+
+
+
+
