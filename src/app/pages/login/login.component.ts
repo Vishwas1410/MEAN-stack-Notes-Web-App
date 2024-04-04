@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
     })
 
     google.accounts.id.initialize({
-      client_id: '321115997285-3p6rh9osl5o8dgma71fekkbo2npirsd2.apps.googleusercontent.com',
-      apiKey: 'AIzaSyBFhUgoYxMBM85FZS5uNha8Nw-ZolIDfNY',
+      client_id: '', //Write your client Id here to enable google login
+      apiKey: '', //Write your google api key here to enable google login
       callback: (resp: any)=> this.handleLogin(resp)
         
       
